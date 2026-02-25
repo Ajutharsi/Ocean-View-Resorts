@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/Dell/OneDrive/Documents/NetBeansProjects/oceanHotel/web/index.html</file>
+            <file>file:/C:/Users/Dell/OneDrive/Documents/NetBeansProjects/oceanHotel/src/java/DBAccess/DBConnection.java</file>
+            <file>file:/C:/Users/Dell/OneDrive/Documents/NetBeansProjects/oceanHotel/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/Dell/OneDrive/Documents/NetBeansProjects/oceanHotel/web/Views/Login.jsp</file>
+            <file>file:/C:/Users/Dell/OneDrive/Documents/NetBeansProjects/oceanHotel/web/Views/AddReservation.jsp</file>
+            <file>file:/C:/Users/Dell/OneDrive/Documents/NetBeansProjects/oceanHotel/web/Views/Help.jsp</file>
+            <file>file:/C:/Users/Dell/OneDrive/Documents/NetBeansProjects/oceanHotel/web/Views/ViewReservation.jsp</file>
+            <file>file:/C:/Users/Dell/OneDrive/Documents/NetBeansProjects/oceanHotel/src/java/Controller/AddReservation.java</file>
+            <file>file:/C:/Users/Dell/OneDrive/Documents/NetBeansProjects/oceanHotel/src/java/Models/User.java</file>
+            <file>file:/C:/Users/Dell/OneDrive/Documents/NetBeansProjects/oceanHotel/src/java/Models/Reservation.java</file>
+            <file>file:/C:/Users/Dell/OneDrive/Documents/NetBeansProjects/oceanHotel/src/java/DAO/ReservationDAO.java</file>
+            <file>file:/C:/Users/Dell/OneDrive/Documents/NetBeansProjects/oceanHotel/src/java/Controller/ViewReservationServlet.java</file>
+            <file>file:/C:/Users/Dell/OneDrive/Documents/NetBeansProjects/oceanHotel/src/java/DAO/BillingDAO.java</file>
+            <file>file:/C:/Users/Dell/OneDrive/Documents/NetBeansProjects/oceanHotel/src/java/Controller/BillingServlet.java</file>
+            <file>file:/C:/Users/Dell/OneDrive/Documents/NetBeansProjects/oceanHotel/src/java/Models/Bill.java</file>
+        </group>
+    </open-files>
+</project-private>
