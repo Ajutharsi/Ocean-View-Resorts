@@ -27,4 +27,8 @@ public class ReservationService {
         return dao.getAllReservations();
     }
 
+    
+    public List<Reservation> getReservationsFiltered(String roomType, String fromDate, String toDate) {
+    return dao.getReservationsFiltered(roomType, fromDate, toDate);
+}
 }

@@ -720,7 +720,7 @@ document.addEventListener('keydown', function(event) {
                 <p>Manage room availability, status, and maintenance schedules.</p>
             </a>
 
-            <a href="reports.html" class="action-card">
+            <a href="ReservationReport.jsp" class="action-card">
                 <span class="action-icon color-teal">📊</span>
                 <h3>Reports & Analytics</h3>
                 <p>View occupancy reports, revenue analytics, and guest statistics.</p>

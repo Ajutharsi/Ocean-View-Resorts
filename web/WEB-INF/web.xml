@@ -8,5 +8,11 @@
      <welcome-file-list>
         <welcome-file>Views/Login.jsp</welcome-file>
     </welcome-file-list>
+    
+    <welcome-file-list>
+        <welcome-file>Views/GuestLogin.jsp</welcome-file>
+    </welcome-file-list>
+    
+    
 
 </web-app>

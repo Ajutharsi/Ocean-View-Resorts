@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.List;
 import java.util.ArrayList;
+import java.sql.Date;
 
 public class ReservationDAO {
     
@@ -139,4 +140,71 @@ public class ReservationDAO {
             return false;
         }
     }
+    
+    
+    public List<Reservation> getReservationsFiltered(String roomType, String fromDate, String toDate) {
+    String sql = "SELECT * FROM reservations WHERE 1=1";
+
+    if (roomType != null && !roomType.isEmpty()) sql += " AND room_type=?";
+    if (fromDate != null && !fromDate.isEmpty()) sql += " AND check_in >= ?";
+    if (toDate != null && !toDate.isEmpty()) sql += " AND check_out <= ?";
+
+    List<Reservation> list = new ArrayList<>();
+    
+    try (Connection con = DBConnection.getInstance().getConnection();
+         PreparedStatement ps = con.prepareStatement(sql)) {
+
+        int index = 1;
+        if (roomType != null && !roomType.isEmpty()) ps.setString(index++, roomType);
+        if (fromDate != null && !fromDate.isEmpty()) ps.setDate(index++, Date.valueOf(fromDate));
+        if (toDate != null && !toDate.isEmpty()) ps.setDate(index++, Date.valueOf(toDate));
+
+        ResultSet rs = ps.executeQuery();
+        while (rs.next()) {
+            Reservation r = new Reservation();
+            r.setId(rs.getInt("reservation_id"));
+            r.setGuestName(rs.getString("guest_name"));
+            r.setRoomType(rs.getString("room_type"));
+            r.setCheckIn(rs.getDate("check_in"));
+            r.setCheckOut(rs.getDate("check_out"));
+            r.setTotal(rs.getDouble("total_amount"));
+            list.add(r);
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+    return list;
+}
+    
+    
+    
+    // Existing ReservationDAO.java la itha add panu
+public List<Reservation> getReservationsByContact(String contactNumber) {
+    List<Reservation> list = new ArrayList<>();
+    String sql = "SELECT * FROM reservations WHERE contact_number = ? ORDER BY reservation_id DESC";
+    try (Connection con = DBConnection.getInstance().getConnection();
+         PreparedStatement ps = con.prepareStatement(sql)) {
+        ps.setString(1, contactNumber);
+        ResultSet rs = ps.executeQuery();
+        while (rs.next()) {
+            Reservation r = new Reservation();
+            r.setId(rs.getInt("reservation_id"));
+            r.setGuestName(rs.getString("guest_name"));
+            r.setContactNumber(rs.getString("contact_number"));
+            r.setEmail(rs.getString("email"));
+            r.setAddress(rs.getString("address"));
+            r.setCheckIn(rs.getDate("check_in"));
+            r.setCheckOut(rs.getDate("check_out"));
+            r.setNights(rs.getInt("nights"));
+            r.setGuests(rs.getInt("guests"));
+            r.setRoomType(rs.getString("room_type"));
+            r.setRate(rs.getDouble("rate"));
+            r.setTotal(rs.getDouble("total"));
+            list.add(r);
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+    return list;
+}
 }

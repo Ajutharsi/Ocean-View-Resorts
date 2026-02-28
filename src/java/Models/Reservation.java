@@ -41,7 +41,7 @@ public class Reservation {
         this.guests = guests;
         this.roomType = roomType;
         this.rate = rate;
-        this.total = total;
+         this.total = rate * nights;
     }
 
     // ---------- Getters & Setters ----------
