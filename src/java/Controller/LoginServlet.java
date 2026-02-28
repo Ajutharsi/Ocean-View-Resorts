@@ -21,7 +21,7 @@ import jakarta.servlet.ServletException;
 
 /**
  *
- * @author Oyslans
+ * @author Tharsi
  */
 
 @WebServlet(name = "LoginServlet", urlPatterns = {"/LoginServlet"})
@@ -52,6 +52,42 @@ public class LoginServlet extends HttpServlet {
         }
     }
     
+    
+   
+//public abstract class LoginHandler {
+//    protected LoginHandler next;
+//    
+//    public LoginHandler setNext(LoginHandler next) {
+//        this.next = next;
+//        return next;
+//    }
+//    
+//    public abstract boolean handle(String username, String password);
+//}
+//
+//
+//public class NullCheckHandler extends LoginHandler {
+//    public boolean handle(String u, String p) {
+//        if (u == null || u.isEmpty() || p == null || p.isEmpty()) {
+//            return false; 
+//        }
+//        return next != null ? next.handle(u, p) : true;
+//    }
+//}
+//
+//
+//public class AuthCheckHandler extends LoginHandler {
+//    private AuthService authService = new AuthService();
+//    public boolean handle(String u, String p) {
+//        return authService.login(u, p);
+//    }
+//}
+
+// Servlet-ல use
+LoginHandler chain = new NullCheckHandler();
+chain.setNext(new AuthCheckHandler());
+
+boolean ok = chain.handle(username, password);
     
     
     

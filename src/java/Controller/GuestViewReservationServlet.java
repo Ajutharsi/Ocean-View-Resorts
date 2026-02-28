@@ -29,7 +29,7 @@ public class GuestViewReservationServlet extends HttpServlet {
         // Session check
         HttpSession session = request.getSession(false);
         if (session == null || session.getAttribute("isGuest") == null) {
-            response.sendRedirect(request.getContextPath() + "/guest/GuestLogin.jsp");
+            response.sendRedirect(request.getContextPath() + "/Views/GuestLogin.jsp");
             return;
         }
 
@@ -40,7 +40,7 @@ public class GuestViewReservationServlet extends HttpServlet {
 
         request.setAttribute("reservations", reservations);
         request.setAttribute("guestName", guestName);
-        request.getRequestDispatcher("/guest/GuestViewReservations.jsp")
+        request.getRequestDispatcher("/Views/GuestViewReservations.jsp")
                .forward(request, response);
     }
 }
