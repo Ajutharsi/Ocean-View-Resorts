@@ -24,7 +24,9 @@ import Models.Reservation;
  *
  * @author Oyslans
  */
-@WebServlet("/AddReservation")
+
+
+@WebServlet(name = "AddReservation", urlPatterns = {"/AddReservation"})
 public class AddReservation extends HttpServlet {
 
     private ReservationService service = new ReservationService();

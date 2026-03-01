@@ -51,7 +51,7 @@ public class LoginServlet extends HttpServlet {
             req.getRequestDispatcher("Views/Login.jsp").forward(req, res);
         }
     }
-    
+}
     
    
 //public abstract class LoginHandler {
@@ -84,14 +84,6 @@ public class LoginServlet extends HttpServlet {
 //}
 
 // Servlet-ல use
-LoginHandler chain = new NullCheckHandler();
-chain.setNext(new AuthCheckHandler());
-
-boolean ok = chain.handle(username, password);
-    
-    
-    
-    }
 
    
 
